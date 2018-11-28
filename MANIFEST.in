@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include mpspeciality *.css
+recursive-include mpspeciality *.csv
+recursive-include mpspeciality *.html
+recursive-include mpspeciality *.ico
+recursive-include mpspeciality *.js
+recursive-include mpspeciality *.json
+recursive-include mpspeciality *.md
+recursive-include mpspeciality *.png
+recursive-include mpspeciality *.py
+recursive-include mpspeciality *.svg
+recursive-include mpspeciality *.txt
+recursive-exclude mpspeciality *.pyc
