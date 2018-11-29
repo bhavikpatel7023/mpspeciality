@@ -88,6 +88,8 @@ doc_events = {
 	}
 }
 
+fixtures = ["Custom Field"]
+
 # Scheduled Tasks
 # ---------------
 
