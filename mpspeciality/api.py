@@ -78,7 +78,7 @@ def stock_entry(doc,method):
 		doc.submit()
 		frappe.msgprint("Roll has been Generated")
 	except Exception as e:
-		frappe.throw("Something went wrong")
+		frappe.throw("Something went wrong {0}".format(e))
 		return e
 
 @frappe.whitelist()
