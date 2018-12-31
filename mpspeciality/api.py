@@ -125,7 +125,15 @@ def delete_batch(doc,method):
 	pass
 	#document = frappe.get_doc("Batch",doc.name)
 	#document.delete()
-	
+
+@frappe.whitelist()
+def weight_detail_by_batch(batch_no):
+	data = frappe.db.sql("""select item_code,actual_qty, qty_after_transaction,voucher_no, batch_no from `tabStock Ledger Entry` where company = 'M. P. Speciality Products' and batch_no='"""+batch_no+"""' order by modified desc """,as_dict=1)
+	if len(data):
+		return data[0].qty_after_transaction
+	else:
+		return 0
+
 '''
 def stock_entry_manufacture(doc,method):
 	try:
