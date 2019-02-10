@@ -134,6 +134,13 @@ def weight_detail_by_batch(batch_no):
 	else:
 		return 0
 
+@frappe.whitelist()
+def detail_by_batch(batch_no):
+	data = frappe.db.sql("""select qty,gross_weight_, tare_weight from `tabStock Entry Detail` where batch_no='"""+batch_no+"""' order by modified desc """,as_dict=1)
+	if len(data):
+		return data
+	else:
+		return 0
 '''
 def stock_entry_manufacture(doc,method):
 	try:
